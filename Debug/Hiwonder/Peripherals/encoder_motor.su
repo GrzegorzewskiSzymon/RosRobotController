@@ -1,4 +1,4 @@
 ../Hiwonder/Peripherals/encoder_motor.c:24:6:encoder_update	56	static
-../Hiwonder/Peripherals/encoder_motor.c:40:6:encoder_motor_control	24	static
-../Hiwonder/Peripherals/encoder_motor.c:62:6:encoder_motor_set_speed	16	static
-../Hiwonder/Peripherals/encoder_motor.c:74:6:encoder_motor_object_init	16	static
+../Hiwonder/Peripherals/encoder_motor.c:40:6:encoder_motor_control	32	static
+../Hiwonder/Peripherals/encoder_motor.c:91:6:encoder_motor_set_speed	16	static
+../Hiwonder/Peripherals/encoder_motor.c:103:6:encoder_motor_object_init	16	static

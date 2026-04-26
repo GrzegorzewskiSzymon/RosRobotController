@@ -26,7 +26,8 @@ struct EncoderMotorObject{
     int32_t ticks_overflow; /**< @brief 计数溢出值 */
     float tps;              /**< @brief ticks per second 计数器频率 */
     float rps;              /**< @brief revolutions per second 输出轴转速 转每秒 */
-    int current_pulse;      /**< @brief 当前输出的PWM值, 有符号对应正反转 */
+    float current_pulse;      /**< @brief 当前输出的PWM值, 有符号对应正反转 */
+    float target_rps;
     PID_ControllerTypeDef pid_controller; /**< @brief PID 控制器 */
 
     /** porting 可移植硬件接口 **/

@@ -39,15 +39,44 @@ void encoder_update(EncoderMotorObjectTypeDef *self, float period, int64_t count
 */
 void encoder_motor_control(EncoderMotorObjectTypeDef *self, float period)
 {
+
+	// --- POCZĄTEK RAMPY PRZYSPIESZENIA ---
+	float max_acceleration = 5.0f; // Ile RPS na sekundę może przyspieszyć silnik. Zmniejsz tę wartość (np. do 2.0f), żeby startował jeszcze łagodniej!
+	float step = max_acceleration * period;
+
+	if (self->pid_controller.set_point < self->target_rps) {
+		self->pid_controller.set_point += step;
+		if (self->pid_controller.set_point > self->target_rps) {
+			self->pid_controller.set_point = self->target_rps;
+		}
+	} else if (self->pid_controller.set_point > self->target_rps) {
+		self->pid_controller.set_point -= step;
+		if (self->pid_controller.set_point < self->target_rps) {
+			self->pid_controller.set_point = self->target_rps;
+		}
+	}
+	// --- KONIEC RAMPY PRZYSPIESZENIA ---
+
     float pulse = 0;
-    pid_controller_update(&self->pid_controller, self->rps, period);   /* 更新 PID控制器 */
-        pulse = self->current_pulse + self->pid_controller.output; /* 计算新的 PWM 值 */
+    // --- ZMODYFIKOWANY FRAGMENT ---
+        // Sprawdzamy, czy cel to 0 i czy rampa już do tego zera dotarła
+        if (self->target_rps == 0.0f && self->pid_controller.set_point == 0.0f) {
+            // Twarde odcięcie: wymuszamy 0 i czyścimy historię prądu
+            pulse = 0;
+            self->current_pulse = 0;
+            self->pid_controller.output = 0;
+        } else {
+            // Normalna jazda: PID pracuje
+            pid_controller_update(&self->pid_controller, self->rps, period);
+            pulse = self->current_pulse + self->pid_controller.output;
+        }
+        // --- KONIEC MODYFIKACJI ---
 
         /* 对输出的 PWM 值进行限幅, 限幅根据定时器的设置确定，本示例定时器设置的占空比 0-100 对应 0-1000 */
         pulse = pulse > 1000 ?  1000 : pulse;
         pulse = pulse < -1000 ? -1000 : pulse;
 
-    self->set_pulse(self, pulse > -5 && pulse < 5 ? 0 : pulse); /* 设置新的PWM值且限制 PWM 的最小值, PWM过小电机只会发出嗡嗡声而不动 */
+    self->set_pulse(self, pulse > -10 && pulse < 10 ? 0 : pulse); /* 设置新的PWM值且限制 PWM 的最小值, PWM过小电机只会发出嗡嗡声而不动 */
 //    self->set_pulse(self, pulse);
     self->current_pulse = pulse; /* 记录新的 PWM 值 */
 }
@@ -61,8 +90,8 @@ void encoder_motor_control(EncoderMotorObjectTypeDef *self, float period)
  */
 void encoder_motor_set_speed(EncoderMotorObjectTypeDef *self, float rps)
 {
-    rps = rps > self->rps_limit ? self->rps_limit : (rps < -self->rps_limit ? -self->rps_limit : rps); /* 对速度进行限幅 */
-    self->pid_controller.set_point = rps; /* 设置 PID 控制器目标 */
+    rps = rps > self->rps_limit ? self->rps_limit : (rps < -self->rps_limit ? -self->rps_limit : rps);
+    self->target_rps = rps; // <--- ZMIEŃ pid_controller.set_point NA target_rps
 }
 
 
@@ -80,6 +109,7 @@ void encoder_motor_object_init(EncoderMotorObjectTypeDef *self)
     self->current_pulse = 0;
     self->ticks_overflow = 0;
     self->ticks_per_circle = 9999; /* 电机输出轴旋转一圈产生的计数个数, 根据电机实际情况填写 */
+    self->target_rps = 0.0f;
     pid_controller_init(&self->pid_controller, 0, 0, 0);
 }
 
