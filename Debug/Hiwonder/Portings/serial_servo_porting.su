@@ -1,0 +1,2 @@
+../Hiwonder/Portings/serial_servo_porting.c:12:12:serial_write_and_read	32	static
+../Hiwonder/Portings/serial_servo_porting.c:47:6:serial_servo_init	8	static

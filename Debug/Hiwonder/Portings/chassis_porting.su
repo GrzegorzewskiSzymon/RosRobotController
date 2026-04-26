@@ -1,0 +1,6 @@
+../Hiwonder/Portings/chassis_porting.c:14:13:jetank_set_motors	24	static
+../Hiwonder/Portings/chassis_porting.c:21:13:tankblack_set_motors	24	static
+../Hiwonder/Portings/chassis_porting.c:27:13:ti4wd_set_motors	24	static
+../Hiwonder/Portings/chassis_porting.c:35:13:jetauto_set_motors	32	static
+../Hiwonder/Portings/chassis_porting.c:46:6:chassis_init	8	static
+../Hiwonder/Portings/chassis_porting.c:79:6:set_chassis_type	16	static

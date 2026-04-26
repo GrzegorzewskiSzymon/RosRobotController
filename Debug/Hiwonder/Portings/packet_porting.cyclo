@@ -1,0 +1,8 @@
+../Hiwonder/Portings/packet_porting.c:42:6:packet_init	1
+../Hiwonder/Portings/packet_porting.c:74:12:send_packet	1
+../Hiwonder/Portings/packet_porting.c:86:13:packet_dma_receive_event_callback	1
+../Hiwonder/Portings/packet_porting.c:101:6:packet_start_recv	2
+../Hiwonder/Portings/packet_porting.c:120:13:packet_uart_error_callblack	1
+../Hiwonder/Portings/packet_porting.c:131:6:packet_rx_task_entry	1
+../Hiwonder/Portings/packet_porting.c:151:6:packet_tx_task_entry	2
+../Hiwonder/Portings/packet_porting.c:170:13:packet_dma_transmit_finished	2

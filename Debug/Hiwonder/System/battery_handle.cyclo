@@ -1,0 +1,2 @@
+../Hiwonder/System/battery_handle.c:16:6:battery_check_timer_callback	9
+../Hiwonder/System/battery_handle.c:64:6:change_battery_limit	1

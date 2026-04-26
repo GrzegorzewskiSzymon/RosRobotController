@@ -1,0 +1,4 @@
+../Hiwonder/Peripherals/rgb_spi.c:12:6:rgb_SendArray	1
+../Hiwonder/Peripherals/rgb_spi.c:23:6:WS2812b_Configuration	2
+../Hiwonder/Peripherals/rgb_spi.c:62:6:set_id_rgb_color	8
+../Hiwonder/Peripherals/rgb_spi.c:81:6:set_rgb_color	9

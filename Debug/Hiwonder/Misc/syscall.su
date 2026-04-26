@@ -1,0 +1,6 @@
+../Hiwonder/Misc/syscall.c:26:7:_sys_command_string	16	static
+../Hiwonder/Misc/syscall.c:31:6:_sys_exit	16	static
+../Hiwonder/Misc/syscall.c:36:6:ttywrch	16	static
+../Hiwonder/Misc/syscall.c:39:5:stdin_getchar	4	static
+../Hiwonder/Misc/syscall.c:44:5:stderr_putchar	16	static
+../Hiwonder/Misc/syscall.c:51:5:stdout_putchar	16	static

@@ -1,0 +1,10 @@
+../Hiwonder/System/packet_handle.c:133:13:packet_oled_handle	24	static
+../Hiwonder/System/packet_handle.c:164:13:packet_led_handle	24	static
+../Hiwonder/System/packet_handle.c:178:13:packet_buzzer_handle	40	static
+../Hiwonder/System/packet_handle.c:185:13:packet_serial_servo_report_init	24	static
+../Hiwonder/System/packet_handle.c:192:13:packet_serial_servo_handle	144	static
+../Hiwonder/System/packet_handle.c:334:13:packet_pwm_servo_handle	72	static
+../Hiwonder/System/packet_handle.c:397:13:packet_motor_handle	56	static
+../Hiwonder/System/packet_handle.c:463:13:packet_battery_limit_handle	24	static
+../Hiwonder/System/packet_handle.c:492:13:packet_RGB_Ctl_handle	24	static
+../Hiwonder/System/packet_handle.c:523:6:packet_handle_init	8	static

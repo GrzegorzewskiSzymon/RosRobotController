@@ -1,0 +1,2 @@
+../Hiwonder/System/app.c:34:6:button_event_callback	32	static
+../Hiwonder/System/app.c:46:6:app_task_entry	40	static,ignoring_inline_asm

@@ -1,0 +1,17 @@
+../Hiwonder/Peripherals/QMI8658.c:31:14:invSqrt	32	static
+../Hiwonder/Peripherals/QMI8658.c:46:13:get_euler_angles	176	static
+../Hiwonder/Peripherals/QMI8658.c:119:6:write_reg	16	static
+../Hiwonder/Peripherals/QMI8658.c:125:9:read_reg	24	static
+../Hiwonder/Peripherals/QMI8658.c:133:10:readWord_reg	24	static
+../Hiwonder/Peripherals/QMI8658.c:142:6:GetEulerAngles	64	static
+../Hiwonder/Peripherals/QMI8658.c:157:6:read_sensor_data	32	static
+../Hiwonder/Peripherals/QMI8658.c:206:6:axis_convert	48	static
+../Hiwonder/Peripherals/QMI8658.c:254:6:read_xyz	24	static
+../Hiwonder/Peripherals/QMI8658.c:301:6:config_acc	32	static
+../Hiwonder/Peripherals/QMI8658.c:346:6:config_gyro	32	static
+../Hiwonder/Peripherals/QMI8658.c:411:6:enableSensors	16	static
+../Hiwonder/Peripherals/QMI8658.c:426:6:config_reg	16	static
+../Hiwonder/Peripherals/QMI8658.c:456:15:get_id	24	static
+../Hiwonder/Peripherals/QMI8658.c:502:6:qmi8658_on_demand_cali	8	static
+../Hiwonder/Peripherals/QMI8658.c:514:15:begin	8	static
+../Hiwonder/Peripherals/QMI8658.c:541:6:dump_reg	4	static

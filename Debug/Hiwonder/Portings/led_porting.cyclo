@@ -1,0 +1,5 @@
+../Hiwonder/Portings/led_porting.c:30:6:leds_init	2
+../Hiwonder/Portings/led_porting.c:56:6:led_timer_callback	2
+../Hiwonder/Portings/led_porting.c:64:13:led_set_pin	3
+../Hiwonder/Portings/led_porting.c:83:12:put_ctrl_block	3
+../Hiwonder/Portings/led_porting.c:100:12:get_ctrl_block	3

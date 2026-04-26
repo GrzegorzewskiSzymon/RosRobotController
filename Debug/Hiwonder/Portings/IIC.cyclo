@@ -1,0 +1,14 @@
+../Hiwonder/Portings/IIC.c:3:6:DelayUs	2
+../Hiwonder/Portings/IIC.c:11:6:I2C_SDA_OUT	1
+../Hiwonder/Portings/IIC.c:21:6:I2C_SDA_IN	1
+../Hiwonder/Portings/IIC.c:32:6:IIC_init	1
+../Hiwonder/Portings/IIC.c:51:6:IIC_start	1
+../Hiwonder/Portings/IIC.c:62:6:IIC_stop	1
+../Hiwonder/Portings/IIC.c:74:6:IIC_ack	1
+../Hiwonder/Portings/IIC.c:86:6:IIC_noack	1
+../Hiwonder/Portings/IIC.c:100:9:IIC_wait_ack	3
+../Hiwonder/Portings/IIC.c:121:6:IIC_send_byte	2
+../Hiwonder/Portings/IIC.c:138:9:IIC_read_byte	4
+../Hiwonder/Portings/IIC.c:163:5:IIC_WriteToMem	5
+../Hiwonder/Portings/IIC.c:186:5:IIC_Write	4
+../Hiwonder/Portings/IIC.c:204:5:IIC_ReadFromMem	5
